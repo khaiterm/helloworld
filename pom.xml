@@ -7,10 +7,6 @@
         <packaging>war</packaging>
         <version>17.0.${v}.Final-SNAPSHOT</version>
         
-    
-    <name>Quickstart: helloworld</name>
-    <description>Helloworld</description>
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -19,30 +15,15 @@
         </license>
     </licenses>
     
-    <dependencies>
+ <build>
 
-        <!-- Import the CDI API, we use provided scope as the API is included in WildFly -->
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
+        <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>2.0.1.Final</version>
+            </plugin>
+        </plugins>
 
-        <!-- Import the Common Annotations API (JSR-250), we use provided scope
-            as the API is included in WildFly -->
-        <dependency>
-            <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Import the Servlet API, we use provided scope as the API is included in WildFly -->
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-    </dependencies>
-
+</build>
 </project>
